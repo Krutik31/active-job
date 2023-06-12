@@ -12,14 +12,19 @@ gem 'sprockets-rails'
 # Use Pry gem for debugging.
 gem 'pry'
 
+gem 'bootstrap', '~> 5.1.3'
+
+gem 'faker'
+
 # Use postgrees as the database for Active Record
 gem 'pg'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
-# For Queing the jobs
+# For Queing and scheduling the jobs
 gem 'sidekiq'
+gem 'sidekiq-cron'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
@@ -61,6 +66,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'letter_opener'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]

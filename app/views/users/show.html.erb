@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+      <%= link_to "Back", users_path, class:"btn btn-sm btn-danger" %>
+      <%= link_to "Enroll into events", user_events_path(@user), class:"btn btn-sm btn-secondary" %>
+      <hr>
+
+      <table class="table table-hover table-bordered text-center">
+        <tr>
+          <th colspan="2"><h3>User details</h3></th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <% if @user.employee %>
+          <tr>
+            <th colspan="2"><h5>Employment details</h5></th>
+          </tr>
+          <tr>
+            <th>Organization</th>
+            <td><%= @user.employee.company %></td>
+          </tr>
+          <tr>
+            <th>Designation</th>
+            <td><%= @user.employee.designation %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+
+      <table class="table table-hover table-bordered text-center">
+        <tr>
+          <th colspan="4"><h3>Enrolled events</h3></th>
+        </tr>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Date & Time</th>
+          <th>Action</th>
+        </tr>
+        <% @user.events.each do |event| %>
+          <tr>
+            <td><%= event.id %></td>
+            <td><%= event.title %></td>
+            <td><%= event.eventdate %></td>
+            <td>
+              <%= link_to "View", user_event_path(@user, event), class:"btn btn-sm btn-success" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

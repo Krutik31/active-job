@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+    
+      <% if notice %>
+        <div class="container w-50 justify-content-center">
+          <p class="notice fs-10" style="background-color: #caf3d1; text-align: center;"><%= notice %></p>
+        </div>
+      <% end %>
+    
+      <table class="table table-hover table-bordered text-center">
+        <tr>
+          <th colspan="4"><h3>Events</h3></th>
+        </tr>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Date & Time</th>
+          <th>Action</th>
+        </tr>
+        <% @events.each do |event| %>
+          <tr>
+            <td><%= event.id %></td>
+            <td><%= event.title %></td>
+            <td><%= event.eventdate %></td>
+            <td>
+              <%= link_to "View", user_event_path(@user, event), class:"btn btn-sm btn-success" %> 
+              <%= link_to "Enroll", enroll_user_path(@user, event), class:"btn btn-sm btn-primary" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+      <%= link_to "Back", user_path(@user), class:"btn btn-sm btn-danger" %>
+
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
