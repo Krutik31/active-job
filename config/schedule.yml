@@ -1,0 +1,7 @@
+generate_events_job:
+  cron: "0 */1 * * *"
+  class: "GenerateEventsJob"
+
+send_emails_email_job:
+  cron: "31 21 * * *"
+  class: "SendEventsEmailJob"

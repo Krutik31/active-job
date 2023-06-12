@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+      <table class="table table-hover table-bordered text-center">
+        <tr>
+          <th colspan="2"><h3>Event #<%= @event.id %></h3></th>
+        </tr>
+        <tr>
+          <th>Title</th>
+          <td><%= @event.title %></td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td><%= @event.description %></td>
+        </tr>
+        <tr>
+          <th>Venue</th>
+          <td><%= @event.venue %></td>
+        </tr>
+        <tr>
+          <th>Host</th>
+          <td><%= @event.host %></td>
+        </tr>
+        <tr>
+          <th>Date & Time</th>
+          <td><%= @event.eventdate %></td>
+        </tr>
+      </table>
+
+      <%= link_to "Back", user_events_path(@user), class:"btn btn-sm btn-danger" %>
+
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
